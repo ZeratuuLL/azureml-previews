@@ -21,9 +21,9 @@ When used for text data specifically, the new `text-classification` scenario wou
 
 ### Difference from our BERT featurizer
 
-BERT is also available as a featurizer in AutoML's classification task. There are other featurizers for text as well, such as tf-idf, Bidirectional LSTM or BERT, and transform text data into high-dimentional vectors. Here the training is not end to end: BERT's weights will first be finetuned, and the output embeddings will be used as features to train the classifier. The embeddings from BERT will no change with the choice of classifier.
+BERT is also available as a featurizer in AutoML's classification task. There are other featurizers for text as well, such as tf-idf, Bidirectional LSTM or BERT, and transform text data into high-dimentional vectors. Here the training is not end to end: BERT's weights will first be finetuned, and the output embeddings will be used as features to train the classifier. The embeddings from BERT will not change with the choice of classifier.
 
-In AutoML NLP offering, we do a direct end-to-end DNN training for the given task, producing a finetuned model for the training dataset used. With our new offering, BERT will update its weightes along with the weights of the classifier. So not only the embeddings are tuned, but they are also tuned with the later classifier to get better performance on the dataset.
+In AutoML NLP offering, we do a direct end-to-end DNN training for the given task, producing a finetuned model for the training dataset used. With our new offering, BERT will update its weightes along with the weights of the classifier. So not only the embeddings are tuned, but they are also tuned with the later classifier layer.
 
 Besides, with this specialized end to end training workflow, we are able to handle larger datasets and ability to add more functionality for NLP-specific feature additions. We already allow user to specify dataset language, as well as using distributed training to speed up the training process. We will have more features available later.
 
